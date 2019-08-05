@@ -1,0 +1,19 @@
+---
+version: "2"
+
+services:
+  chillbot:
+    container_name: chillbot
+    image: golang:1.12.7-alpine
+    volumes:
+      - .:/go/src/chillbot
+    working_dir: /go/src/chillbot
+    command: >
+      sh -c 'go run main.go
+      --token=<bot>
+      --key=<apikey>
+      -w <chatid>
+      --host=<host>
+      --port=<port>
+      --base=<urlbase>
+      --ssl'
