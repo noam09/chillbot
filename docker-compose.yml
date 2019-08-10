@@ -7,6 +7,7 @@ services:
     image: golang:1.12.7-alpine
     volumes:
       - .:/go/src/chillbot
+    restart: unless-stopped
     working_dir: /go/src/chillbot
     command: >
       sh -c 'go run main.go
